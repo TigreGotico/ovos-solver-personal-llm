@@ -1,3 +1,5 @@
+# inspired by: https://github.com/rushic24/langchain-remember-me-llm/
+# MIT license
 import torch
 from json_database import JsonStorageXDG
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
