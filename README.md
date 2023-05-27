@@ -5,6 +5,17 @@ this plugin uses langchain and llamaindex, it stores user facts and then uses a 
 it is similar in spirit to the "private GPT" projects floating around but instead of documents it works with sentences said by the user
 
 
+# Configuration
+
+```python
+model_name = config.get("model") or "google/flan-t5-small"
+pipeline = pipeline("text2text-generation", model=model_name, device=0,
+                    model_kwargs={"torch_dtype": torch.bfloat16})
+initial_prompt = config.get("initial_prompt") or \
+                 'You are a highly intelligent question answering A.I. based on the information provided by the user. ' \
+                 'If the answer cannot be found in the user provided information, write "I could not find an answer."'
+```
+
 # Usage
 
 WIP
